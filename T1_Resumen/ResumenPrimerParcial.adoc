@@ -1,0 +1,127 @@
+= Resumen primer parcial
+
+- Descripción del modelo de caja. + 
+El modelo de caja es la forma en que se organiza un documento HTML, estas cajas son usadas por CSS para darle un diseño a una pagina web, en este modelo, una vez creada nuestro modelo de HTML no se puede ver a simple vista, pero se crean automaticamente las cajas con el texto que nosotros agregamos.
+Si queremos darle un diseño a nuestro documento se utilizan ciertas propiedades para modificar la caja de texto, como el posicionamiento, darle color, bordes entre otros. +
+
+image::https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/modelo-caja-css-t1.jpg[Modelo de caja]
+
+*Contenido(Contenido)* +
+El contenido es una parte indispensable para el modelo de cajas ya que consta del contenido o informacion que se visualizara al usuario. +
+*Padding* +
+El padding es el espacio que hay entre el contenido y el borde, esta opcion es opcional y se usa para darle una posicion diferente al contenido que la que tiene por default para nuestros diseños +
+*Border* +    
+Es el borde o la linea que se encuentra alrededor del contenido y el relleno de un modelo de caja. + 
+*Margin* +
+El margin es el espacio entre cajas, esta herramienta es opcional, nosotros decidimos el espacio para nuestro diseño de paginas web. +
+*Outline* +
+Esta propiedad de modelo de cajas se usa para poderle dar un diseño distinto al modelo de cajas por fuera del borde, con esta propiedad se puede hacer un contorno no rectangular para darle un diseño diferente. Una de las consideraciones es que apesar de que se puede dibujar un contorno fuera del borde aparentando que la caja es mas grande, realmente a la hora de usar las medidas de la caja no toma en cuenta esta propiedad, por lo que cualquier contorno no afectaria al tamaño total de la caja. +
+
+<<<
+
+La propiedad *Display* se usa para controlar las estructuras de los elementos de nuestro HTML, y como algunas propiedades se inician por default, esta no se queda atras, ya que dependiendo del elemento que insertemos en nuestro HTML tendra una propiedad display para organizarlo en el HTML. +
+Por ejemplo existen ciertos valores que pueden tener nuestros elemento, como el *_box_* +
+Cuando este valor es aplicado el elemento se vuelve una caja que contiene ciertas propiedades como: usar una nueva linea y se expande de izquierda a derecha. +
+Algunos ejemplos serian: +
+- <div> 
+- <p> 
+- <form> +
+Otro valor que podemos encontrar es el valor *_inline_*, esta puede contener dentro de ella un texto pero no afecta el flujo del documento +
+Algunos ejemplos pueden ser: +
+- <span>
+- <a> +
+
+El valor *_none_* hace que una parte de nuestro codigo no se muestre visualmente al usuario, pero sigue permaneciendo dentro del documento HTML. +
+Un ejemplo de un elemento que usa esta propiedad puede ser el javascript, ya que con ella se pueden mostrar o quitar elementos sin eliminarlos ni volviendolos a crear. +
+
+Y por ultimo un valor mas que existe puede ser *_inline-block_*, que a diferencia de los demas valores, en esta es posible establecer un ancho y alto de un elemento; ademas se respetan los márgenes / rellenos superiores e inferiores. Otra caracteristica es que al insertar un nuevo elemento *_inline-block_* no hace un salto de linea si no que puede posicionarse al lado de otro elemento
+
+<<<
+
+La propiedad *_box-sizing_* es utilizada para definir el tamaño total de algun elemento de nuestro HTML.
+Con esta propiedad podremos controlar el comportamiento de los tamaños por medio de algunos valores, estos son: +
+* Content-Box. Este valor es el que se pone por default a un elemento. Este valor toma el contenido de la caja y por ella se define el ancho y el alto del elemento. +
+* Border-Box. Este valor toma en cuenta ademas del contenido los bordes y rellenos que hemos establecido y los toma como tamaño total del elemento. +
+
+Cuando hablamos de nuestro *_flujo del documento_* , nos estamos refiriendo a como esta estructurado los elementos de nuesto documento HTML. +
+Existen dos tipos de elementos: +
+* Elemento de bloque +
+Este tipo de elemento al crearlo hace un salto de linea, no se posicionan una al lado del otro.
+Este elemento ocupa todo el ancho de una linea lo que hace que el flujo sea de arriba hacia abajo
+* Elemento de linea +
+Estos elementos se posicionan uno al lado del otro hasta que el ancho disponible lo permita, su flujo es de izquierda a derecha. +
+
+Un posicionamiento comun es el *_static_*, este valor es aplicado automaticamente cuando se crea una caja, la caracteristica es que al momento de crearla se posicionara una abajo de otra +
+
+La posicion *_relative_* permite desplazar un elemento del flujo, usando propiedades, pero a su vez los demas elementos respetaran el espacio que fue usado por dicho elemento. Su punto de referencia es la posicion inicial del mismo elemento. +
+
+La posicion *_absolute_* permite que la caja se pueda mover tomando como punto de referencia el padre o el navegador, cabe recalcar que su espacio en el flujo no es respetado a excepcion del flujo nuevo que se creo dentro del relative o el padre. +
+
+Cuando una caja se le aplica la posicion *_fixed_*, esta permanece en el mismo lugar en el que la situamos. Toma como punto de referencia el navegador y su espacio en el flujo es quitado. Un ejemplo podria ser un anuncio publicitario que permanece en la pantalla +
+
+El valor *_sticky_* es una combinacion de dos valores mas, su valor inicial puede ser el static ya que permanece dentro del flujo de los elementos, pero una vez que se hace scroll al subir esta caja a cierta altura se convierte en fixed. Un ejemplo puede ser el menu de facebook de la aplicacion movil. +
+
+Las *_unidades de medida_* en CSS son usados para establecer medidas de un elemento, o quizas el borde, es muy importante esta propiedad ya que con ella cambiaremos los tamaños y daremos diseño a nuestro documento HTML. +
+
+Existen varios tipos, uno de ellos son las *_absolutas_* (cm, mm, in), este tipo de medidas ya estan establecidas, y no se suelen usar mucho en un documento de HTML. +
+
+Otro ejemplo son las *_unidades de medida relativas_*, estas son las mas usadas por los diseñadores de paginas web y muy conocidas. Otra caracteristica es que su valor esta referenciado a otro valor esto lo hace flexible para diferentes medios. +
+Una de ellas son los *pixeles(px)* y esta es usada ya que como sabemos nuestros dispositivos usan los pixeles para proyectar cualquier elemento. +
+La unidad *em* es relativa respecto del tamaño de letra del elemento. Si tenemos un tamaño de letra de 16px significa que 1em = 16px. +
+La unidad *rem* es relativa al tamaño de la fuente del elemento raíz. Esta unidad es muy cómoda, ya que permite establecer un tamaño para el documento en general. +
+Por ejemplo, podemos definir un tamaño general en el body de 10px, si nosotros ponemos 2rem tomara de referencia el tamaño que definimos en el body y simplemente los multiplicara por dos, el tamaño seria: 20px
+
+Los *_selectores_* son utilizados como su nombre lo indica para seleccionar ciertas partes del codigo HTML para aplicar algun diseño que hayamos definido. +
+Un ejemplo es el *tag*, aqui se puede definir dentro del mismo HTML algunas propiedades de diseño, por ejemplo dentro del mismo espacio de algun elemento definido se pueden aplicar propiedades para ese elemento en especifico. +
+El *id* es usado en css para ubicar algun elemento especifico que hayamos agregado en el HTML. Dentro del css su sintaxis es: "#id"
+Al igual que el id, una *clase* se puede definir dentro de algun elemento en HTML y se puede mandar llamar desde el css. Dentro del css su sintaxis es: ".clase"
+
+Existen tambien *_selectores relacionales_* que se usan para ser mas especificos a la hora de seleccionar ciertos elementos. +
+Estos son algunos ejemplos: +
+*Descendiente*(Espacio). Se usa para seleccionar un elemento que esta dentro de otro elemento y se pone solamente un espacio entre estos dos elementos +
+*Descenciente directo*(>). Este se usa para seleccionar los hijos directos de algun elemento. +
+*Hermano adyacente*(+). Este selecciona un elemento que tenga un elemento hermano encima de el. +
+*Hermano general*(~). Este selecciona todos los hermanos de un elemento. +
+
+Los *_PseudoSelectores_* son agregados por el navegador, estas palabras clave no se refieren en si a elementos del documento html, sino a ubicaciones y partes de un elemento. 
+Ecisten dos tipos: *PseudoElementos* y *PseudoClases*. +
+
+Algunos ejemplos de estos dos pueden ser: +
+*_PseudoElementos_* +
+_::first-letter_ +
+La primera letra de un elemento de bloque +
+_::first-line_ +
+La primera línea de un elemento de bloque +
+_::before_  +
+La ubicación que esta antes de un elemento +
+_::after_ + 
+La ubicación que esta después de un elemento +
+
+*_PseudoClases_* +
+_:link_ +
+Los enlaces que no se han visitado (Sólo para elementos <a>) +
+_:hover_ +
+Elemento cuando el usuario pasa el ratón sobre el +
+_:first-child_ +
+ El primer hijo del elemento seleccionado +
+_:last-child_ +
+El último hijo del elemento seleccionado +
+
+Los navegadores tienen una forma de interpretar y aplicar el codigo css al HTML, para esto es necesario conocer la "*Cascada*"
+Cuando hablamos de la cascada nos referimos a que orden tomara los estilos que codificamos en el html o el css, y si llegaran a ver varios estilos que apunten al mismo elemento, la cascada nos ayuda a determinar cual estilo ganara en peso por lo que nos ayudara a determinar cual es el estilo que se aplicara. +
+Varios puntos importantes para definir cuales estilos se aplicaran son: +
+1. Importancia +
+2. Especificidad +
+3. Orden
+
+La *_especificidad_* se aplica cuando dos estilos van dirigidos a un mismo elemento.
+Para determinar que estilo se aplicara se evaluara cual es el estilo mas especifico o cual es el que tiene mas peso. +
+Para ello nos basaremos en una tabla que contiene la _jerarquia de especificidad_. +
+Jerarquía Selector Especificidad +
+4 Etiqueta html 1,0,0,0 puntos +
+3 ID 0,1,0,0 puntos +
+2 Clase, pseudoclase, atributo 0,0,1,0 puntos +
+1 Elemento, psedoelemento 0,0,0,1 puntos +
+0 Selector universal * 0,0,0,0 puntos +
+
+Sabiendo ya cuanto peso tiene cada elemento determinamos que elementos tenemos en cada selector y sumamos todos los elementos conforme a la tabla de jerarquia, el que tenga mas peso es el estilo que se aplicara.
