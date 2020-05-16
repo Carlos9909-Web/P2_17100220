@@ -1,0 +1,33 @@
+html{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background:url(https://cdn.forbes.com.mx/2018/02/gibson-561x360.jpg) no-repeat;
+    background-size: cover;
+}
+*{
+    box-sizing: border-box;
+}
+#Formulario{
+    position: relative;
+    top: 100px;
+    left: 500px;
+    color: rgb(31, 1, 1);
+    background-color: rgb(133, 3, 20);
+    border: 1px solid rgb(141, 135, 135);
+    width: 400px;
+    height: 250px;
+    padding: 15px;
+}
+
+#BotonAceptar{
+    
+    position: absolute;
+    left: 45%;
+}
+
+#BotonAceptar:hover{
+    color: white;
+    background-color: black;
+}
